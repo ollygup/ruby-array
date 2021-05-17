@@ -1,5 +1,5 @@
 require "./input_functions"
-# Use the code from previous task to complete this:
+
 
 
 module Genre
@@ -9,10 +9,9 @@ end
 $genre_names = ['Null', 'Pop', 'Classic', 'Jazz', 'Rock']
 
 class Album
-# NB: you will need to add tracks to the following and the initialize()
+
 	attr_accessor :title, :artist, :genre, :tracks, :plocation
 
-# complete the missing code:
 	def initialize (atitle, aartist, agenre, atrk, ploc)
 		# insert lines here
 		@title = atitle
@@ -33,7 +32,6 @@ class Track
 end
 
 # Reads in and returns a single track from the given file
-
 def read_track (music_file)
 	# fill in the missing code
 	mytrack_title = music_file.gets.chomp
@@ -43,12 +41,10 @@ def read_track (music_file)
 end
 
 # Returns an array of tracks read from the given file
-
 def read_tracks (music_file)
 	tracks = Array.new
 	count = music_file.gets.chomp.to_i
 
-	# Put a while loop here which increments an index to read the tracks
 	x=0
 	while x < count
 		tracks << read_track(music_file)
@@ -60,7 +56,6 @@ def read_tracks (music_file)
 end
 
 # Takes an array of tracks and prints them to the terminal
-
 def print_tracks (tracks)
 	# print all the tracks use: tracks[x] to access each track.
 	for i in 0..tracks.length-1
@@ -70,11 +65,9 @@ def print_tracks (tracks)
 end
 
 # Reads in and returns a single album from the given file, with all its tracks
-
 def read_album music_file
 
 	# read in all the Album's fields/attributes including all the tracks
-	# complete the missing code
 	album_title = music_file.gets.chomp
 	album_artist = music_file.gets.chomp
 	album_location = music_file.gets.chomp
@@ -87,9 +80,6 @@ end
 
 # Takes a single album and prints it to the terminal along with all its tracks
 def print_album (album)
-	#length = album.length-1
-  # print out all the albums fields/attributes
-  # Complete the missing code.
 	puts "			Title is --> " + album.title
 	puts "			Artist is -> " + album.artist
 	puts "			Genre is --> " + album.genre.to_s
@@ -97,7 +87,6 @@ def print_album (album)
 	puts "			" + $genre_names[album.genre.to_i]
 	print_tracks (album.tracks)
 	puts ""
-	# print out the tracks
 
 end
 
@@ -107,8 +96,8 @@ def print_track track
 	puts('Track file location is: ' + track.location)
 end
 
-# Reads in an album from a file and then print the album to the terminal
 
+# Reads in an album from a file and then print the album to the terminal
 def main
 	album_array = Array.new()
 	run = true
